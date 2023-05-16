@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>surrealdb indxdb</title>
+    <script>
+      (async () => {
+        let response = await fetch('./idb.wasm');
+        let bytes = await response.arrayBuffer();
+        let { instance } = await WebAssembly.instantiate(bytes, { });
+        console.log(instance);
+      })();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
